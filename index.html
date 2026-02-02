@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>HTML_Anka - Öğren & Oyna</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eef6ff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 { color: #003366; }
+h2 { color: #0059b3; }
+h3 { color: #007acc; }
+
+.kutu {
+    background: white;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 950px;
+    border-radius: 14px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+pre {
+    background: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+button, a.btn {
+    padding: 12px 25px;
+    margin: 6px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, a.btn:hover {
+    background: #0056b3;
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    width: 90px;
+}
+
+.dark {
+    background: #111;
+    color: white;
+}
+
+.dark .kutu {
+    background: #222;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔥 HTML_ANKA PLATFORMU 🔥</h1>
+<p>Öğren • Oyna • Kodla • Geliş 😎</p>
+
+<!-- SEVİYE -->
+<div class="kutu">
+<h2>🏆 Seviye Sistemi</h2>
+<h3 id="seviye">Level 1</h3>
+<button onclick="levelUp()">Level Atla</button>
+</div>
+
+<!-- HTML DERS -->
+<div class="kutu">
+<h2>📘 HTML Ders 1</h2>
+<p>HTML web sitelerinin iskeletidir.</p>
+<pre>
+&lt;h1&gt;Başlık&lt;/h1&gt;
+&lt;p&gt;Paragraf&lt;/p&gt;
+&lt;button&gt;Buton&lt;/button&gt;
+</pre>
+</div>
+
+<!-- HESAP -->
+<div class="kutu">
+<h2>🧮 Hesap Makinesi</h2>
+<input id="a" type="number">
+<input id="b" type="number"><br><br>
+<button onclick="topla()">+</button>
+<button onclick="cikar()">-</button>
+<button onclick="carp()">×</button>
+<button onclick="bol()">÷</button>
+<h3 id="sonuc">Sonuç: ?</h3>
+</div>
+
+<!-- SAYAÇ -->
+<div class="kutu">
+<h2>➕ Sayaç</h2>
+<h3 id="sayac">0</h3>
+<button onclick="artir()">+</button>
+<button onclick="azalt()">-</button>
+</div>
+
+<!-- DARK MODE -->
+<div class="kutu">
+<h2>🌙 Dark Mode</h2>
+<button onclick="dark()">Aç / Kapat</button>
+</div>
+
+<!-- OYUN -->
+<div class="kutu">
+<h2>🎮 Şans Oyunu</h2>
+<p>0-9 arası sayı</p>
+<button onclick="oyun()">Oyna</button>
+<h3 id="oyunSonuc"></h3>
+</div>
+
+<!-- QUIZ -->
+<div class="kutu">
+<h2>🧠 Quiz</h2>
+<p>HTML açılımı nedir?</p>
+<button onclick="dogru()">Hyper Text Markup Language</button>
+<button onclick="yanlis()">High Text Make Line</button>
+<p id="quizSonuc"></p>
+</div>
+
+<!-- HTML EKLE -->
+<div class="kutu">
+<h2>➕ JS ile HTML Ekle</h2>
+<button onclick="ekle()">Ekle</button>
+<div id="alan"></div>
+</div>
+
+<!-- VİDEO LİSTESİ -->
+<div class="kutu">
+<h2>🎥 Video Konuları</h2>
+<ul style="text-align:left;">
+<li>HTML Nedir?</li>
+<li>Etiketler</li>
+<li>Butonlar</li>
+<li>Input</li>
+<li>CSS Giriş</li>
+<li>JavaScript Giriş</li>
+</ul>
+</div>
+
+<!-- KANAL -->
+<div class="kutu">
+<h2>📺 YouTube Kanalım</h2>
+<p>HTML öğrenmek isteyenler için 👇</p>
+
+<a class="btn"
+href="https://www.youtube.com/@HTML_Başlangıç"
+target="_blank">
+KANALA GİT 🚀
+</a>
+
+<p><b>@HTML_Başlangıç</b></p>
+</div>
+
+<!-- SERTİFİKA -->
+<div class="kutu">
+<h2>📜 Sertifika</h2>
+<p>Bu siteyi bitirenler:</p>
+<h3>✅ HTML BAŞLANGIÇ SERTİFİKASI</h3>
+</div>
+
+<p>👑 Bu platformu yapan: <b>Mahmut</b></p>
+
+<script>
+let s = 0;
+let level = 1;
+
+function levelUp() {
+    level++;
+    document.getElementById("seviye").innerText = "Level " + level;
+}
+
+function topla() {
+    sonuc.innerText = "Sonuç: " + (Number(a.value) + Number(b.value));
+}
+function cikar() {
+    sonuc.innerText = "Sonuç: " + (a.value - b.value);
+}
+function carp() {
+    sonuc.innerText = "Sonuç: " + (a.value * b.value);
+}
+function bol() {
+    sonuc.innerText = "Sonuç: " + (a.value / b.value);
+}
+function artir() {
+    s++;
+    sayac.innerText = s;
+}
+function azalt() {
+    s--;
+    sayac.innerText = s;
+}
+
+function dark() {
+    document.body.classList.toggle("dark");
+}
+
+function oyun() {
+    oyunSonuc.innerText =
+        "🎉 Şanslı sayı: " + Math.floor(Math.random() * 10);
+}
+
+function dogru() {
+    quizSonuc.innerText = "✅ DOĞRU!";
+}
+function yanlis() {
+    quizSonuc.innerText = "❌ Yanlış!";
+}
+
+function ekle() {
+    let p = document.createElement("p");
+    p.innerText = "✨ JS ile yeni HTML eklendi!";
+    alan.appendChild(p);
+}
+</script>
+
+</body>
+</html>
